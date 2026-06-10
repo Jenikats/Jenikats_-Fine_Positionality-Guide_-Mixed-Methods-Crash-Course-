@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing Your Positionality Statement: A Step-by-Step Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:wght@300;400;600&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+  :root {
+    --ink: #1a1a2e;
+    --warm: #f7f3ee;
+    --accent: #7b3f2e;
+    --gold: #c19a3e;
+    --muted: #6b6b6b;
+    --border: #d9cfc4;
+    --highlight: #eee4d4;
+    --step-bg: #faf7f3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--warm);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: white;
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.02) 40px,
+      rgba(255,255,255,0.02) 41px
+    );
+  }
+  header .eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  header .subtitle {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: 0 auto 24px;
+  }
+  header .source-tag {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.5px;
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* INTRO */
+  .intro {
+    padding: 52px 0 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .intro p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  .intro p:last-child { margin-bottom: 0; }
+
+  /* WHAT IS A POSITIONALITY STATEMENT */
+  .definition-box {
+    background: var(--ink);
+    color: white;
+    padding: 36px 40px;
+    margin: 48px 0;
+    position: relative;
+  }
+  .definition-box::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: var(--gold);
+    position: absolute;
+    top: -20px;
+    left: 28px;
+    line-height: 1;
+    opacity: 0.6;
+  }
+  .definition-box p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.88);
+    padding-left: 20px;
+  }
+  .definition-box .attr {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 18px;
+    padding-left: 20px;
+  }
+
+  /* SECTION HEADINGS */
+  .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  /* STEPS */
+  .steps-section {
+    padding: 56px 0;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 0 28px;
+    margin-bottom: 64px;
+    position: relative;
+  }
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 31px;
+    top: 64px;
+    bottom: -28px;
+    width: 2px;
+    background: var(--border);
+  }
+  .step-number {
+    width: 64px;
+    height: 64px;
+    background: var(--accent);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .step-body {}
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.3;
+    padding-top: 12px;
+  }
+  .step-subtitle {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .step-body p {
+    margin-bottom: 16px;
+    color: #3a3a3a;
+    line-height: 1.85;
+  }
+
+  /* EXCERPT BLOCK */
+  .excerpt {
+    background: var(--highlight);
+    border-left: 3px solid var(--accent);
+    padding: 22px 26px;
+    margin: 22px 0;
+  }
+  .excerpt .excerpt-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .excerpt blockquote {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  .excerpt .citation {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* PROMPT BOX */
+  .prompts {
+    background: var(--step-bg);
+    border: 1px solid var(--border);
+    padding: 24px 28px;
+    margin: 20px 0;
+  }
+  .prompts .prompt-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .prompts ul {
+    list-style: none;
+    padding: 0;
+  }
+  .prompts ul li {
+    padding: 7px 0 7px 20px;
+    position: relative;
+    font-size: 15.5px;
+    color: #3a3a3a;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.65;
+  }
+  .prompts ul li:last-child { border-bottom: none; }
+  .prompts ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 13px;
+    top: 8px;
+  }
+
+  /* WARNING / NOTE */
+  .note {
+    background: white;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 20px 24px;
+    margin: 20px 0;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.75;
+  }
+  .note strong {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  /* SYNTHESIS SECTION */
+  .synthesis {
+    background: var(--ink);
+    color: white;
+    padding: 60px 40px;
+    margin: 56px 0 0;
+  }
+  .synthesis .section-label { color: var(--gold); margin-bottom: 10px; }
+  .synthesis h2 { color: white; margin-bottom: 20px; }
+  .synthesis p { color: rgba(255,255,255,0.8); margin-bottom: 16px; line-height: 1.85; font-size: 16.5px; }
+
+  .template-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 28px 32px;
+    margin: 28px 0;
+  }
+  .template-card .tc-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .template-card p {
+    color: rgba(255,255,255,0.88);
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 0;
+  }
+  .template-card .blank {
+    background: rgba(193,154,62,0.2);
+    border-bottom: 1px solid var(--gold);
+    padding: 0 4px;
+    color: var(--gold);
+    font-style: normal;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* EXAMPLE PARAGRAPH */
+  .example-paragraph {
+    background: white;
+    border: 2px solid var(--accent);
+    padding: 36px 40px;
+    margin: 40px 0;
+  }
+  .example-paragraph .ep-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .example-paragraph p {
+    font-size: 16.5px;
+    line-height: 1.9;
+    color: #333;
+    margin-bottom: 12px;
+  }
+  .example-paragraph p:last-child { margin-bottom: 0; }
+  .annotated {
+    background: #fff3e8;
+    border-left: 3px solid var(--gold);
+    padding: 2px 6px;
+    font-style: normal;
+    cursor: default;
+  }
+
+  /* ANNOTATIONS KEY */
+  .annotation-key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .ak-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .ak-swatch {
+    width: 14px;
+    height: 14px;
+    background: #fff3e8;
+    border-left: 3px solid var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 40px 28px;
+    border-top: 1px solid var(--border);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    .step { grid-template-columns: 48px 1fr; gap: 0 18px; }
+    .step-number { width: 48px; height: 48px; font-size: 18px; }
+    .step:not(:last-child)::after { left: 23px; }
+    header { padding: 40px 20px 36px; }
+    .synthesis { padding: 40px 24px; }
+    .example-paragraph { padding: 28px 24px; }
+    .definition-box { padding: 28px 24px; }
+  }
+
+  @media print {
+    header { background: #1a1a2e !important; -webkit-print-color-adjust: exact; }
+    .synthesis { background: #1a1a2e !important; -webkit-print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Researcher's Toolkit</div>
+  <h1>Writing Your Positionality Statement</h1>
+  <p class="subtitle">A step-by-step guide grounded in the work of Michelle Fine</p>
+  <p class="source-tag">Adapted from <em>Just Research in Contentious Times: Widening the Methodological Imagination</em> (2018)</p>
+</header>
+
+<div class="container">
+
+  <section class="intro">
+    <p>Michelle Fine never labels a section of her book "positionality statement." But across every chapter of <em>Just Research in Contentious Times</em>, she models — in practice — everything a rigorous positionality statement must do: she names who she is, discloses what she believes and what she cannot see, traces how her biography shaped her research questions, critiques the limitations her position has imposed on past work, and identifies the methodological commitments that follow from all of that.</p>
+    <p>This guide extracts that process into six concrete steps, using her own words as examples. At the end, you will have the building blocks to write a cohesive positionality paragraph that integrates identity, reflexivity, bias awareness, accountability, and methodological commitment — not as separate boxes to tick, but as a single, coherent scholarly stance.</p>
+  </section>
+
+  <div class="definition-box">
+    <p>A positionality statement is not a confession or a disclaimer. It is a methodological act — an argument that who you are shapes what you can see, what you will miss, whose knowledge you center, and how you remain accountable to the communities your research affects.</p>
+    <div class="attr">Core principle — Fine, throughout</div>
+  </div>
+
+  <!-- STEPS -->
+  <section class="steps-section">
+    <div class="section-label">The Six-Step Process</div>
+    <h2>From Biography to Research Stance</h2>
+
+    <!-- STEP 1 -->
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-body">
+        <div class="step-title">Name Your Social Location</div>
+        <div class="step-subtitle">Identity · Social Position · Background</div>
+        <p>Begin by identifying the social categories and biographical experiences that shape your vantage point: race, class, gender, ethnicity, religion, family history, educational trajectory, professional role. Be specific. Vague identity claims ("I come from a diverse background") do no methodological work. The goal is to name the particular ground you stand on — because the ground determines what you can and cannot see.</p>
+        <p>Fine does not simply say she is white. She situates her whiteness inside a specific historical and class trajectory — immigrant Jewish family, working-class origins, upward mobility — and shows how that particular combination produced her relationship to privilege and injustice.</p>
+
+        <div class="excerpt">
+          <div class="excerpt-label">Fine's Example — Chapter 1</div>
+          <blockquote>"My stance as critical participatory researcher has matured in the soil of a thoroughly immigrant Jewish family, a working-class home filled with love but not books, and then deep involvement in feminist, antiwar, and antiracism struggles, eventual privilege."</blockquote>
+          <div class="citation">Fine, 2018, p. 6</div>
+        </div>
+
+        <div class="prompts">
+          <div class="prompt-label">Reflective Prompts for Step 1</div>
+          <ul>
+            <li>What racial, class, gender, ethnic, religious, or national identities do you carry into your research?</li>
+            <li>What is the specific history behind those identities — not just the category, but how you came to occupy it?</li>
+            <li>What institutions have shaped you (family, school, profession, community)?</li>
+            <li>What experiences of privilege and/or marginalization have you lived?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-body">
+        <div class="step-title">Trace Biography to Research Questions</div>
+        <div class="step-subtitle">Origin of Inquiry · What Drives You · Why This, Why Now</div>
+        <p>Your research questions do not emerge from a vacuum. They come from somewhere in your life. Step 2 asks you to make that connection visible and honest. Fine argues that researchers have "an obligation to ask, from where do our questions originate?" — and that answering this question is inseparable from knowing to whom your research is accountable.</p>
+        <p>She traces two specific questions she has asked across her career directly to her childhood home: where does loss hide when progress walks in? and where is the missing discourse of desire? She shows how watching her mother's depression beneath a surface of upward mobility planted those questions in her before she had a discipline to name them.</p>
+
+        <div class="excerpt">
+          <div class="excerpt-label">Fine's Example — Chapter 1</div>
+          <blockquote>"I have been bequeathed, then, to ask two questions, over and over in my research, my teaching, and my activism; in schools, communities, prisons, and youth social movements: Where in the body, the family, the culture, the nation and in the globe do bodies of sadness swell and fester in the shadow of progress? And, then, where lies the missing discourse of desire?"</blockquote>
+          <div class="citation">Fine, 2018, p. 6</div>
+        </div>
+
+        <div class="prompts">
+          <div class="prompt-label">Reflective Prompts for Step 2</div>
+          <ul>
+            <li>What is the earliest experience — personal, familial, or communal — that connects to your research topic?</li>
+            <li>What have you seen, lived, or witnessed that makes this research feel necessary?</li>
+            <li>What do you hope to find? What are you afraid to find?</li>
+            <li>Whose pain or struggle has called you to this work?</li>
+          </ul>
+        </div>
+
+        <div class="note">
+          <strong>Important Distinction</strong>
+          This step is not about making your research about you. It is about making the origin of your questions transparent so readers can assess what you are likely to see, center, and emphasize — and what you may be predisposed to miss.
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-body">
+        <div class="step-title">Disclose Your Pre-Existing Views and Biases</div>
+        <div class="step-subtitle">Bias Awareness · Prior Beliefs · Ideological Commitments</div>
+        <p>Before entering any research setting, you arrive with beliefs, political commitments, and ideological orientations. Step 3 requires you to name them — not neutralize them, but name them. Fine is explicit: she does not claim to be without bias. She claims to know what her biases are, to name them before she begins, and to build structures that prevent them from operating unchecked.</p>
+        <p>Her disclosure before the Israel/Palestine fieldwork is a model of this. She states her political views, names her community commitments, and then shows what she did to ensure her research did not simply confirm what she already believed. She also applies this retrospectively, critiquing her 1980s dropout research for the blind spots her positional ignorance created.</p>
+
+        <div class="excerpt">
+          <div class="excerpt-label">Fine's Example — Disclosing Views Before Fieldwork (Chapter 1)</div>
+          <blockquote>"I had never been to Israel, and I held deeply critical views of the Israeli government's annexation of occupied territories and its treatment of Palestinians. I worried that the radical/progressive edge of Judaism in the United States was eroding, only to be replaced by a right-wing, anti-Palestinian, pro-Israel-at-all-costs ideology."</blockquote>
+          <div class="citation">Fine, 2018, p. 9</div>
+        </div>
+
+        <div class="excerpt">
+          <div class="excerpt-label">Fine's Example — Retrospective Critique of Past Bias (Chapter 2)</div>
+          <blockquote>"In the 1980s, truth be told, I probably thought I was conducting a study of 'dropouts' to 'give them voice.' I know now that is not only intellectually anemic and politically problematic, it's just bad research."</blockquote>
+          <div class="citation">Fine, 2018, p. 19</div>
+        </div>
+
+        <div class="excerpt">
+          <div class="excerpt-label">Fine's Example — Naming Privilege as a Limit on Knowledge (Conclusion)</div>
+          <blockquote>"Pangs of hunger never consumed my belly, fear of police never shot through my nervous system, teachers never questioned my intellect, I always had a bed to call home, rejection was never inscribed in my family of origin, violence never touched my body. I know injustice well, but it's a closely held, cognitive acquaintance, an empathic muddle of solidarities, and a deep academic/political project."</blockquote>
+          <div class="citation">Fine, 2018, p. 116</div>
+        </div>
+
+        <div class="prompts">
+          <div class="prompt-label">Reflective Prompts for Step 3</div>
+          <ul>
+            <li>What do you already believe about this community, topic, or problem — before you begin?</li>
+            <li>What political, ideological, or theoretical commitments do you bring?</li>
+            <li>What have you never experienced in your body that the communities you study live daily?</li>
+            <li>Where has your position previously caused you to miss something important?</li>
+            <li>What do you most fear getting wrong, and why?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step">
+      <div class="step-number">4</div>
+      <div class="step-body">
+        <div class="step-title">Practice Reflexivity — Ongoing, Not One-Time</div>
+        <div class="step-subtitle">Continuous Self-Examination · Learning in the Field · Staying Correctable</div>
+        <p>Reflexivity is not what you did once in a methods section. It is an ongoing practice throughout research — and Fine models it as such. She returns to her past work, corrects it, revises her framing, accepts challenges from co-researchers, and changes her analytical categories when communities push back. When the youth in the Echoes of Brown project challenged the term "achievement gap" and renamed it the "opportunity gap," Fine accepted that correction and changed the project accordingly. That is reflexivity in action — not just knowing your position, but remaining open to being corrected by it.</p>
+
+        <div class="excerpt">
+          <div class="excerpt-label">Fine's Example — Accepting Community Correction (Chapter 5)</div>
+          <blockquote>"At our first session... the youth from six suburban high schools and three urban schools immediately challenged the frame of the research: 'When you call it an achievement gap, that means it's our fault. The real problem is an opportunity gap — let's place the responsibility where it belongs — in society and in the schools.' And so we changed the name from the Achievement Gap Project to the Opportunity Gap Project."</blockquote>
+          <div class="citation">Fine, 2018, p. 85</div>
+        </div>
+
+        <div class="excerpt">
+          <div class="excerpt-label">Fine's Example — Reflexivity About Power in the Research Team (Chapter 5)</div>
+          <blockquote>"We share our provisional and partial knowledges, interrogate our differences, return awkwardly and deliberately to the fault lines of power within the group, dive into privilege and 'choques' — difficult discussions."</blockquote>
+          <div class="citation">Fine, 2018, p. 80</div>
+        </div>
+
+        <div class="prompts">
+          <div class="prompt-label">Reflective Prompts for Step 4</div>
+          <ul>
+            <li>How will you remain open to being corrected by the communities you study?</li>
+            <li>What structures will you build into your process to interrogate your own assumptions during data collection and analysis?</li>
+            <li>Who will hold you accountable — and have you given them real power to do so?</li>
+            <li>What would it look like to change course based on community feedback?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step">
+      <div class="step-number">5</div>
+      <div class="step-body">
+        <div class="step-title">Name Your Accountability — To Whom Do You Owe This Work?</div>
+        <div class="step-subtitle">Ethical Obligation · Community Accountability · Who Benefits</div>
+        <p>Fine opens her book — literally the first two sentences — with this question: "We have an obligation to ask, from where do our questions originate? And then we know, to whom we are accountable." This is not rhetorical. It is a methodological framework. Your positionality statement must answer: who are you accountable to, and what does that accountability require of you in practice?</p>
+        <p>For Fine, accountability is not abstract. It shapes whose knowledge is centered in research design, how findings are shared, what forms products take, and who has access to data. She is explicit that accountability to communities means researchers do not get to decide unilaterally what the research means or how it is used.</p>
+
+        <div class="excerpt">
+          <div class="excerpt-label">Fine's Example — Accountability as Core Principle (Chapter 1 Opening)</div>
+          <blockquote>"We have an obligation to ask, from where do our questions originate? And then we know, to whom we are accountable."</blockquote>
+          <div class="citation">Fine, 2018, p. 1</div>
+        </div>
+
+        <div class="excerpt">
+          <div class="excerpt-label">Fine's Example — Accountability Shaping Research Products (Chapter 6)</div>
+          <blockquote>"Our obligation has been, and continues to be, deeply shaped by and accountable to young people under siege. Together we decide how/when/to whom/for whom we provide open access to the data, for activists on the ground, for advocates involved in class action lawsuits, for policymakers gathering state testimony, for educators writing curriculum."</blockquote>
+          <div class="citation">Fine, 2018, p. 112</div>
+        </div>
+
+        <div class="prompts">
+          <div class="prompt-label">Reflective Prompts for Step 5</div>
+          <ul>
+            <li>Who does this research most directly affect?</li>
+            <li>Who benefits from this research — and who could be harmed by it?</li>
+            <li>How will findings be returned to the community?</li>
+            <li>What decisions about the research will community members have a voice in?</li>
+            <li>What would it mean to betray the community you are researching, and how will you guard against it?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step">
+      <div class="step-number">6</div>
+      <div class="step-body">
+        <div class="step-title">Connect Positionality Directly to Methodological Choice</div>
+        <div class="step-subtitle">From Who You Are → How You Research · Method as Consequence of Position</div>
+        <p>This is the step most researchers omit — and it is the one that makes a positionality statement do real scholarly work. You must draw the explicit line from your identity, biases, and accountability to the specific methodological decisions you are making. Not just "I am a White researcher" but "because I am a White researcher, and because my positional ignorance previously produced this specific methodological failure, I now use participatory methods that structurally center community knowledge in the research design."</p>
+        <p>Fine makes this connection directly. She names her prior failure — not involving community researchers in the 1980s dropout study — and says plainly that a participatory design would have corrected it. Her methodological commitment to CPAR is not a neutral preference; it is a direct consequence of having reckoned with what her privileged position could not see on its own. She also grounds this theoretically in Sandra Harding's "strong objectivity" — the argument that including marginalized standpoints in the research team strengthens, rather than compromises, validity.</p>
+
+        <div class="excerpt">
+          <div class="excerpt-label">Fine's Example — Position → Methodological Failure → Corrective Method (Chapter 2)</div>
+          <blockquote>"As a White researcher not from the community, I had little idea that racialized mass incarceration was beginning to channel Black and Brown bodies from schools into prisons. Had the project been participatory, clearly community-based activists and researchers would have insisted that we interrogate these structural links between schools and prisons, even in the 1980s."</blockquote>
+          <div class="citation">Fine, 2018, p. 19</div>
+        </div>
+
+        <div class="excerpt">
+          <div class="excerpt-label">Fine's Example — Positionality → Strong Objectivity → Valid Knowledge (Chapter 5)</div>
+          <blockquote>"Together we work toward the 'strong objectivity,' as described by philosopher of science Sandra Harding (1994), which we believe strengthens the validity of and lifts up stories of complexity, ambivalence, and contradiction... We must be skeptical of the wisdom and limits of our own situated knowledges; we must begin with critical interrogation of how privilege shapes what we know and more so what we don't."</blockquote>
+          <div class="citation">Fine, 2018, pp. 79, 116</div>
+        </div>
+
+        <div class="prompts">
+          <div class="prompt-label">Reflective Prompts for Step 6</div>
+          <ul>
+            <li>Given who you are, what research approaches risk centering your perspective over the community's?</li>
+            <li>What method specifically counteracts your known blind spots?</li>
+            <li>How does your chosen methodology reflect your accountability commitments?</li>
+            <li>Who has a voice in your research design, analysis, and dissemination — and why?</li>
+            <li>What theoretical framework justifies your methodological choices given your position?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- SYNTHESIS SECTION -->
+<div class="synthesis">
+  <div class="container">
+    <div class="section-label">Putting It Together</div>
+    <h2>Writing the Cohesive Positionality Paragraph</h2>
+    <p>Once you have worked through all six steps, you are ready to synthesize. A strong positionality paragraph is not a list — it is a narrative arc that moves from who you are, to what that means for what you see and miss, to what you are committed to doing about it. Below is a template structure drawn from Fine's approach, followed by an annotated example of what a finished paragraph looks like.</p>
+
+    <div class="template-card">
+      <div class="tc-label">Paragraph Template — Modeled on Fine</div>
+      <p>I come to this research as <span class="blank">[social location — be specific]</span>, shaped by <span class="blank">[key biographical experiences that connect to this topic]</span>. These experiences have generated the questions driving this work: <span class="blank">[your core research questions and why they matter to you]</span>. I enter this study with <span class="blank">[pre-existing beliefs, commitments, or theoretical orientations]</span>, and I recognize that my position as <span class="blank">[identity in relation to the community you are studying]</span> means I cannot access <span class="blank">[what your position hides from you]</span> through my own vantage point alone. Because of this, I am accountable first to <span class="blank">[the community/communities your research most affects]</span>, and this accountability shapes my methodological choice to use <span class="blank">[your method]</span>, which structurally <span class="blank">[explain how the method counteracts your blind spots and centers community knowledge]</span>.</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ANNOTATED EXAMPLE -->
+  <div class="example-paragraph">
+    <div class="ep-label">Annotated Example — Applying Fine's Framework</div>
+    <p><span class="annotated" title="Step 1: Social location named specifically">I come to this research as a Black woman raised in a low-income household in a mid-sized Southern city, the first in my family to attend graduate school</span>, shaped by <span class="annotated" title="Step 2: Biography to research question">years of watching my younger brothers navigate a school system that suspended them repeatedly, funneled them toward remedial tracks, and ultimately pushed one of them into the juvenile justice system before the age of fourteen.</span> That experience has driven me to ask not just what happens to Black boys in schools, but what the school itself believes about them before they walk through the door — and whose knowledge counts as evidence of that belief. <span class="annotated" title="Step 3: Bias disclosure — pre-existing view">I enter this work with a deep conviction that schools are not neutral institutions, that discipline disparities are structurally produced rather than behaviorally earned, and that deficit frameworks embedded in school policy are a form of harm.</span> I also recognize that <span class="annotated" title="Step 3: What position hides">my insider status as someone who grew up adjacent to this experience does not grant me automatic understanding of every family or community I will encounter — and that my academic credentialing has granted me epistemological authority that the families I am studying have been systematically denied.</span> <span class="annotated" title="Step 5: Accountability named">I am accountable first to the families who trusted me with their children's stories, and this means findings will be returned to them before they are shared anywhere else, in forms they can use in advocacy, not only in forms legible to academic audiences.</span> <span class="annotated" title="Step 6: Method as direct consequence of position">Because my positional privilege as a credentialed researcher risks reproducing the same expert-over-community dynamic I am critiquing, I have chosen a participatory action research design in which family members are co-researchers — reviewing interview guides, challenging my analytic frames, and deciding together how findings are represented — not as informants, but as the analysts they already are.</span></p>
+
+    <div class="annotation-key">
+      <div class="ak-item"><div class="ak-swatch"></div> Highlighted text = one of the six steps applied</div>
+    </div>
+  </div>
+
+  <!-- FINAL REMINDERS -->
+  <div class="note">
+    <strong>One Last Thing — From Fine</strong>
+    A positionality statement is not finished when you write it. Fine's most important contribution is showing that reflexivity is continuous — it lives in your field notes, your research camps, your willingness to change the name of your project when the community corrects you. The paragraph you write before research begins is a commitment, not a conclusion. As Fine says: "Never to trust our own solitary, privileged perspectives." (Fine, 2018, p. 116)
+  </div>
+
+</div>
+
+<footer>
+  <p>This guide was developed from a close reading of Michelle Fine's <em>Just Research in Contentious Times: Widening the Methodological Imagination</em> (Teachers College Press, 2018).<br>
+  All excerpts are attributed to Fine (2018) and are used for educational purposes.</p>
+</footer>
+
+</body>
+</html>
